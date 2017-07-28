@@ -1,0 +1,9 @@
+<div ng-controller="mushCtrl">
+	<input type="text" ng-model="mushSearch"><br>
+    <input type="radio" name="Poisonous" ng-model="poison" value="false"><label for="Poisonous">Poisonous</label>
+    <input type="radio" name="Nonpoisonous" ng-model="poison" value="true"><label for="Nonpoisonous">Nonpoisonous</label><br>
+	<h2>Matching mushrooms:</h2>
+	<ul>
+	    <li ng-repeat="mushroom in mushArr | filter: {description: mushSearch} | filter: poison">{{mushroom.name}}</li>
+	</ul>
+</div>
